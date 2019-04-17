@@ -1,0 +1,33 @@
+Database Schema
+
+user:{
+  pk:
+  name:
+  location: (latitude, longitude)
+  photo:
+  favorite_bathrooms: {bathroomFK, bathroomFK, ...}
+  reviewed_bathrooms: {reviewFK, reviewFK, ...}
+  rank: (int value out of all users; based on activity-> favorites, reviews, and bathrooms visited)
+  title: (string based on rank)
+}
+
+bathroom:{
+  pk:
+  location: (latitude, longitude)
+  favorited_by: {userFK, userFK, ...}
+  reviews: {reviewFK, reviewFK, ...}
+}
+
+review:{
+  pk:
+  owned_by: userFK
+  bathroom: bathroomFK
+  timestamp:
+  title:
+  aesthetic_score: (inclusive value between 1-5; 0 means abstain)
+  cleanliness_score: (inclusive value between 1-5; 0 means abstain)
+  amenity_score: (inclusive value between 1-5; 0 means abstain)
+  overall_score: (aesthetic_score + cleanliness_score + amenity_score)/3
+  description: 
+}
+

@@ -1,0 +1,21 @@
+Toylatte Design Notes
+
+~ Take note of recently pooped locations (Timestamp + geolocation)
+
+~ Geosocial and Maps Platform
+
+~ Different titles depending on your activity with app.
+  ~ Rank 1: King of the Oval Throne
+  ~ Rank 2: Rightful Heir to the Oval Throne
+  ~ Rank 3: Bathroom Conquistador
+  ~ ...
+  ~ Beginner Rank: Filthy Casual
+
+~ What fields do I need to consider for geolocation? Should I start by looking at APIs for geolocation?
+  ~ https://theappsolutions.com/blog/development/develop-app-with-geolocation/
+  ~ Need location services and maps
+    ~ gps: Needs data from at least four satellites to determine position with about 60 ft accuracy.
+    ~ cell_id: If GPS signal is unavailable, use information from cell towers/mobile networks. Back-up to gps.
+    ~ cell_id + gps: more precise than gps
+    ~ wifi: more precise than cell_id; use RSSI and frequently visited places; 2 meters accuracy
+  ~ Use a Map Kit Framework (like google maps) to put the user location on a map.
