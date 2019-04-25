@@ -1,0 +1,23 @@
+FROM ubuntu:18.04 
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV FLASK_APP /src/app/app.py
+ENV FLASK_RUN_PORT 5000
+ENV FLASK_RUN_HOST 0.0.0.0
+
+RUN apt-get update             && \
+    apt-get install -y            \
+    python-minimal                \
+    curl                          \
+    wget                          \
+    python-pip                    \
+    software-properties-common
+
+# fixes version conflict
+RUN pip install Flask
+
+WORKDIR /src
+
+ADD . /src
+
+CMD flask run

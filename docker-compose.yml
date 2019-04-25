@@ -1,0 +1,10 @@
+version: '3'
+services:
+  toylatte:
+    build:
+      context: .
+      dockerfile: './docker/Dockerfile-toylatte'
+    volumes:
+      - .:/src
+    ports:
+      - "5000:5000"
